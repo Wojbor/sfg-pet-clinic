@@ -14,7 +14,7 @@
     </parent>
     <groupId>amaciag.springframework</groupId>
     <artifactId>sfgPetClinic</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
     <name>sfg-pet-clinic</name>
     <description>sfg-pet-clinic</description>
     <properties>
@@ -52,7 +52,7 @@
 
 
         <url>https://github.com/Wojbor/sfg-pet-clinic</url>
-        <tag>sfgPetClinic-0.0.1</tag>
+        <tag>sfgPetClinic-0.0.3</tag>
     </scm>
 
 

@@ -44,13 +44,14 @@
     </build>
 
     <scm>
-        <url>https://github.com/Wojbor/sfg-pet-clinic.git</url>
+
 
         <connection>scm:git:https://github.com/Wojbor/sfg-pet-clinic.git</connection>
 
         <developerConnection>scm:git:https://github.com/Wojbor/sfg-pet-clinic.git</developerConnection>
 
 
+        <url>https://github.com/Wojbor/sfg-pet-clinic</url>
         <tag>sfgPetClinic-0.0.1</tag>
     </scm>
 

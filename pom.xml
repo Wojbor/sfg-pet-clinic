@@ -14,7 +14,7 @@
     </parent>
     <groupId>amaciag.springframework</groupId>
     <artifactId>sfgPetClinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>sfg-pet-clinic</name>
     <description>sfg-pet-clinic</description>
     <properties>
@@ -44,10 +44,15 @@
     </build>
 
     <scm>
-        <developerConnection>
-            scm:git:ssh:git@github.com:Wojbor/sfg-pet-clinic.git
-        </developerConnection>
-  </scm>
+        <url>https://github.com/Wojbor/sfg-pet-clinic.git</url>
+
+        <connection>scm:git:https://github.com/Wojbor/sfg-pet-clinic.git</connection>
+
+        <developerConnection>scm:git:https://github.com/Wojbor/sfg-pet-clinic.git</developerConnection>
+
+
+        <tag>HEAD</tag>
+    </scm>
 
 
 </project>

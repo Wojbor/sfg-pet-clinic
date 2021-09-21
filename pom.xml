@@ -20,9 +20,9 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
+
     <dependencies>
-
-
     </dependencies>
 
     <build>
@@ -49,5 +49,6 @@
         </developerConnection>
       <tag>sfgPetClinic-0.0.1</tag>
   </scm>
+
 
 </project>

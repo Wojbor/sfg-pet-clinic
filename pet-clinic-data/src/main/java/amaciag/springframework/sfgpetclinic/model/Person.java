@@ -1,6 +1,6 @@
 package amaciag.springframework.sfgpetclinic.model;
 
-public class Person {
+public class Person extends BaseEntity{
     private String fisrtName;
     private String lastName;
 

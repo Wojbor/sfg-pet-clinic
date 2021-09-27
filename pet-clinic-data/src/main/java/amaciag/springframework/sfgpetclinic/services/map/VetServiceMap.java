@@ -1,11 +1,11 @@
 package amaciag.springframework.sfgpetclinic.services.map;
 
 import amaciag.springframework.sfgpetclinic.model.Vet;
-import amaciag.springframework.sfgpetclinic.services.CrudService;
+import amaciag.springframework.sfgpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
 
     @Override

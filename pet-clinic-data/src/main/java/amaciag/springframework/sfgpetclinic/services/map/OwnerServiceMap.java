@@ -1,6 +1,5 @@
 package amaciag.springframework.sfgpetclinic.services.map;
 
-import amaciag.springframework.sfgpetclinic.model.BaseEntity;
 import amaciag.springframework.sfgpetclinic.model.Owner;
 import amaciag.springframework.sfgpetclinic.model.Pet;
 import amaciag.springframework.sfgpetclinic.services.OwnerService;
@@ -15,10 +14,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     private final PetTypeService petTypeService;
 
-    private final PetService<BaseEntity, Number> petService;
+    private final PetService petService;
 
 
-    public OwnerServiceMap(PetTypeService petTypeService, PetService<BaseEntity, Number> petService) {
+    public OwnerServiceMap(PetTypeService petTypeService, PetService petService) {
         this.petTypeService = petTypeService;
         this.petService = petService;
     }

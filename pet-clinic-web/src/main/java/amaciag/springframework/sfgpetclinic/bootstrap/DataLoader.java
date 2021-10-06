@@ -1,10 +1,7 @@
 package amaciag.springframework.sfgpetclinic.bootstrap;
 
 import amaciag.springframework.sfgpetclinic.model.*;
-import amaciag.springframework.sfgpetclinic.services.OwnerService;
-import amaciag.springframework.sfgpetclinic.services.PetTypeService;
-import amaciag.springframework.sfgpetclinic.services.SpecialtyService;
-import amaciag.springframework.sfgpetclinic.services.VetService;
+import amaciag.springframework.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,13 +14,15 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtiesService;
+    private final VisitService visitService;
 
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtiesService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtiesService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtiesService = specialtiesService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -83,6 +82,7 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner1);
 
+
         Owner owner2 = new Owner();
 
         owner2.setFisrtName("Jan");
@@ -100,6 +100,13 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
+        Visit visit = new Visit();
+        visit.setPet(janCat);
+        visit.setDate(LocalDate.now());
+        visit.setDescription("Cat Snezze");
+
+
+        visitService.save(visit);
 
         System.out.println("Loaded Owners.....");
 

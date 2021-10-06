@@ -1,6 +1,5 @@
 package amaciag.springframework.sfgpetclinic.services.springdatajpa;
 
-import amaciag.springframework.sfgpetclinic.model.BaseEntity;
 import amaciag.springframework.sfgpetclinic.model.Pet;
 import amaciag.springframework.sfgpetclinic.repositories.PetRepository;
 import amaciag.springframework.sfgpetclinic.services.PetService;
@@ -12,7 +11,7 @@ import java.util.Set;
 
 @Service
 @Profile("springDataJpa")
-public class PetSDJpaService implements PetService<BaseEntity, Number> {
+public class PetSDJpaService implements PetService {
 
     private final PetRepository petRepository;
 

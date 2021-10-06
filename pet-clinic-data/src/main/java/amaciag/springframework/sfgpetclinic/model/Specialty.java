@@ -1,5 +1,10 @@
 package amaciag.springframework.sfgpetclinic.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "specialities")
 public class Specialty extends BaseEntity{
 
     private String description;

@@ -2,11 +2,14 @@ package amaciag.springframework.sfgpetclinic.bootstrap;
 
 import amaciag.springframework.sfgpetclinic.model.*;
 import amaciag.springframework.sfgpetclinic.services.*;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
+@Scope(ConfigurableBeanFactory.S)
 @Component
 public class DataLoader implements CommandLineRunner {
 

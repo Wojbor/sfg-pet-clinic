@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
-@Scope(ConfigurableBeanFactory.S)
+@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 @Component
 public class DataLoader implements CommandLineRunner {
 

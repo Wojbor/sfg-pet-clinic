@@ -6,17 +6,18 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class OwnerServiceMapTest {
 
     OwnerServiceMap ownerServiceMap;
+    final String lastName = "Mac";
 
     @BeforeEach
     void setUp() {
         ownerServiceMap = new OwnerServiceMap(new PetTypeServiceMap(), new PetServiceMap());
 
-        ownerServiceMap.save(Owner.builder().fisrtName("arek").build());
+        ownerServiceMap.save(Owner.builder().fisrtName("arek").lastName("Mac").build());
     }
 
     @Test
@@ -38,7 +39,7 @@ class OwnerServiceMapTest {
     }
 
     @Test
-    void save() {
+    void saveOwner() {
         Owner owner2 = Owner.builder().fisrtName("Jhon").build();
 
         Owner savedOwner =  ownerServiceMap.save(owner2);
@@ -47,11 +48,10 @@ class OwnerServiceMapTest {
     }
 
     @Test
-    void delete() {
-        Owner owner = new Owner();
-        ownerServiceMap.delete(owner);
+    void deleteOwner() {
+        ownerServiceMap.delete(ownerServiceMap.findById(1l));
 
-        assertEquals(null, owner.getId());
+        assertEquals(0, ownerServiceMap.findAll().size());
     }
 
     @Test
@@ -66,8 +66,19 @@ class OwnerServiceMapTest {
 
     @Test
     void findByLastName() {
-        /*Owner owner = Owner.builder().lastName("Mac").build();
-        ownerServiceMap.save(owner);
-        assertEquals("Mac", ownerServiceMap.findByLastName(owner.getLastName()));*/
+
+        Owner owner = ownerServiceMap.findByLastName(lastName);
+
+        assertNotNull(owner);
+
+        assertEquals(lastName, owner.getLastName());
+    }
+
+    @Test
+    void findByLastNameNotFound() {
+
+        Owner owner = ownerServiceMap.findByLastName("NotFound");
+
+        assertNull(owner);
     }
 }

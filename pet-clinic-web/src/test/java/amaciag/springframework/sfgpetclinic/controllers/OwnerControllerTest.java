@@ -16,9 +16,23 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
+;
+
+
 class OwnerControllerTest {
 
+    /*@Mock
+    OwnerService ownerService;
+
+
+    @InjectMocks
     OwnerController ownerController;
+
+
+    Set<Owner> owners;
+
+    @Autowired
+    MockMvc mockMvc;*/
 
     @Mock
     OwnerService ownerService;
@@ -26,16 +40,27 @@ class OwnerControllerTest {
     @Mock
     Model model;
 
+    OwnerController ownerController;
+
+
+
     @BeforeEach
     void setUp() throws Exception {
         MockitoAnnotations.openMocks(this);
 
         ownerController = new OwnerController(ownerService);
 
+       /* owners = new HashSet<>();
+        owners.add(Owner.builder().build());
+        owners.add(Owner.builder().build());
+
+        mockMvc = MockMvcBuilders.standaloneSetup(ownerController).build();*/
+
+
     }
 
     @Test
-    void listOwners() {
+    void listOwners() throws Exception {
         ArgumentCaptor<Set<Owner>> argumentCaptor = ArgumentCaptor.forClass(Set.class);
         Set<Owner> owners = new HashSet<>();
 
@@ -52,6 +77,13 @@ class OwnerControllerTest {
         verify(model, times(1)).addAttribute(eq("owners"), argumentCaptor.capture());
         Set<Owner> dataInOwnerController  = argumentCaptor.getValue();
         assertEquals(1, owners.size());
+
+        /*when(ownerService.findAll()).thenReturn(owners);
+
+        mockMvc.perform(get("/owners")).
+                andExpect(status().isOk()).
+                andExpect(view().name("owners/index")).
+                andExpect(model().attribute("owners", hasSize(2)));*/
     }
 
     @Test
